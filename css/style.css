@@ -1,0 +1,304 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Raleway', sans-serif;
+}
+
+.grid{
+    display: grid;/*disposion grid*/
+    grid-template-columns: repeat(12,1fr);/*12 columnas y 1fraccion*/
+    width: 90%;
+    max-width: 1100px;
+    height: 100%;
+    margin: auto; /*para centrar todo*/
+    gap: 10px;/*para que haya espacio entre las 
+    columnas*/
+    overflow: hidden;/*todo lo que este fuera del 
+    grid no salga*/
+    align-items: center;
+    /*Los artículos se colocan en el centro del contenedor.*/
+    
+}
+
+.weight-400{
+    font-weight: 400;
+}
+
+.weight-600{
+    font-weight: 600;
+}
+
+.parrafo{
+    margin-bottom: 20px;
+}
+
+.header{
+    height: 500px;
+}
+
+.img-hero{
+    width: 100%;
+    height: auto;
+    grid-column: 7/13;/*columnas por donde se desplaza
+    el contenido*/
+}
+
+.img{
+    width: 95%;
+    max-width: 400px;
+}
+
+.textos-hero{
+    grid-column: 1/7;
+    padding-right: 20px;
+}
+
+.textos-hero p{
+    text-align: justify;
+    /*justificar Estira las líneas para que cada 
+    línea tenga el mismo ancho (como en periódicos y revistas)*/
+
+}
+
+.cta{
+    width: 130px;
+    background: #000;
+    color: #fff;
+    display: inline-block;
+    /*para poder darle padding
+    La displaypropiedad especifica el comportamiento de visualización 
+    (el tipo de cuadro de representación) de un 
+    elemento.
+    inline-block:
+    Muestra un elemento como un contenedor de bloque de nivel en línea. El elemento en sí está formateado como un elemento en línea, pero puede aplicar valores de alto y ancho*/
+    text-align: center;
+    padding: 10px 0;/*arriba y a los lados*/
+    text-decoration: none;/*sin linea de link*/
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/*Header*/
+
+.services{
+    height: 370px;
+    /* background: linear-gradient(180deg, #fff 50%, #000 50%), */
+    /*180deg:para la mitad*/
+    background: linear-gradient(180deg, #fff 50%, #000 50%);
+
+}
+
+.items{
+    /*Combinar grid con flexbox*/
+    grid-column: 1/-1;
+    display: flex;/*propiedad flex*/
+    width: 100%;
+    justify-content: space-evenly;
+    /*para que se reparta equitativamente*/
+    align-items: center;
+    flex-wrap: wrap;/*Si se sobrepasa ponlos abajo*/
+}
+
+.item{
+    width: 30%;
+    background: #fff;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
+    overflow: hidden;/*si se sale lo cubre*/
+    height: 220px;
+    padding: 20px 10px;
+    text-align: center;
+
+}
+
+/*Selector de atributos*/
+/*Me permite que todas las clases que empliecen
+con las propiedades o atributos que le doy dentro del corchete
+los edita*/
+[class^="far fa"]{
+    font-size: 50px;
+    text-align: center;
+}
+
+[class^="fas fa"]{
+    font-size: 50px;
+    text-align: center;
+}
+
+.titulo-service{
+    margin: 20px 0;
+}
+
+/*About us*/
+
+.about-us{
+    background: #000;
+    color: #fff;
+    height: auto;
+    padding-bottom: 60px;
+}
+
+.textos-about-us{
+    grid-column: 1/-1;
+    text-align: center;
+
+}
+
+.textos-about-us .parrafo{
+    margin-top: 10px;
+    color: #ccc;
+}
+
+.numbers{
+    grid-column: 1/-1;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.number{
+    text-align: center;
+    font-size: 30px;
+    width: 22%;
+}
+
+/* mission*/
+
+.mission-grid{
+    display: grid;
+    padding: 80px 0;
+    
+}
+
+
+
+.textos-mission{
+    grid-column: 7/13;
+    grid-row: 1/-1;
+    margin-bottom: 30px;
+}
+
+.textos-mission h2{
+    grid-column: 1/-1;
+    text-align: center;
+    padding: 20px;
+}
+
+.texto-mission{
+    padding-bottom: 10px;
+}
+
+.img-mission{
+    grid-column: 1/7;
+    grid-row: 1/-1;
+}
+
+/*footer*/
+
+footer{
+    background: #000;
+    color: #fff;
+    text-align: center;
+    padding:60px 0;
+
+}
+
+.textos-footer{
+    grid-column: 1/-1;
+    margin-bottom: 30px;
+}
+
+
+
+[class^="footer-item"] a{
+    color: #fff;
+    font-size: 30px;
+    display: flex;
+    justify-content: space-evenly;
+    overflow: hidden;
+    text-decoration: none;
+    
+}
+
+
+[class^="footer-item"] {
+    grid-column: span 3;
+}
+
+@media screen and (max-width:800px){
+    .header{
+        height: auto;
+    }
+    .grid{
+        grid-gap: 30px;
+    }
+
+    .img-hero, .textos-hero{
+        grid-column: 1/-1;
+    }
+
+    .img-hero{
+        text-align: center;
+    }
+
+    .textos-hero{
+        margin-top: 40px;
+    }
+
+    .services{
+        height: auto;
+        margin-top: 40px;
+    }
+
+    .item{
+        width: 60%;
+        margin: 40px;
+        height: auto;
+        padding: 40px;
+    }
+
+    .textos-mission{
+        grid-row: 1/2;
+        grid-column: 1/-1;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .img-mission{
+        grid-row: 2/3;
+        grid-column: 1/-1;
+        text-align: center;
+    }
+}   
+
+@media screen and (max-width:400px){
+    .img{
+        max-width: 170px;
+    }
+
+    .grid{
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
+
+    .item{
+        width: 90%;
+        flex-shrink: 0;
+    }
+
+    .number{
+        width: 55%;
+        border-bottom: 1px dotted #fff;
+        margin-bottom: 20px;
+        padding-bottom: 5px;
+    }
+
+    .textos-mission{
+        margin: 15px;
+    }
+
+    [class^="footer-item"]{
+        grid-column: 1/-1;
+    }
+}
